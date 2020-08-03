@@ -1,0 +1,116 @@
+{
+   "Species" : [
+      {
+         "General" : [
+            {
+               "name" : "gene",
+               "path" : "gene.svg"
+            },
+            {
+               "name" : "general",
+               "path" : "general.svg"
+            }
+         ]
+      },
+      {
+         "mRNA" : [
+            {
+               "name" : "mRNA-1",
+               "path" : "mRNA-1.svg"
+            },
+            {
+               "name" : "mRNA",
+               "path" : "mRNA.svg"
+            }
+         ]
+      },
+      {
+         "ncRNA" : [
+            {
+               "Housekeeping ncRNA" : [
+                  {
+                     "name" : "rRNA",
+                     "path" : "rRNA.svg"
+                  },
+                  {
+                     "name" : "snoRNA",
+                     "path" : "snoRNA.svg"
+                  },
+                  {
+                     "name" : "snRNA",
+                     "path" : "snRNA.svg"
+                  },
+                  {
+                     "name" : "tRNA",
+                     "path" : "tRNA.svg"
+                  }
+               ]
+            },
+            {
+               "Regulatory ncRNA" : [
+                  {
+                     "name" : "circRNA",
+                     "path" : "circRNA.svg"
+                  },
+                  {
+                     "name" : "lncRNA",
+                     "path" : "lncRNA.svg"
+                  },
+                  {
+                     "name" : "miRNA",
+                     "path" : "miRNA.svg"
+                  },
+                  {
+                     "name" : "piRNA",
+                     "path" : "piRNA.svg"
+                  },
+                  {
+                     "name" : "siRNA",
+                     "path" : "siRNA.svg"
+                  },
+                  {
+                     "name" : "Y RNA",
+                     "path" : "Y RNA.svg"
+                  }
+               ]
+            },
+            {
+               "name" : "pri-miRNA",
+               "path" : "pri-miRNA.svg"
+            }
+         ]
+      },
+      {
+         "Protein" : [
+            {
+               "name" : "antibody",
+               "path" : "antibody.svg"
+            },
+            {
+               "name" : "ligand",
+               "path" : "ligand.svg"
+            },
+            {
+               "name" : "phosphorylated_protein",
+               "path" : "phosphorylated_protein.svg"
+            },
+            {
+               "name" : "protein_1",
+               "path" : "protein_1.svg"
+            },
+            {
+               "name" : "protein_2",
+               "path" : "protein_2.svg"
+            },
+            {
+               "name" : "receptor",
+               "path" : "receptor.svg"
+            },
+            {
+               "name" : "Ubiquitinated protein",
+               "path" : "Ubiquitinated protein.svg"
+            }
+         ]
+      }
+   ]
+}

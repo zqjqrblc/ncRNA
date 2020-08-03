@@ -1,0 +1,1467 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: none
+%%Creator: wxWidgets PostScript renderer + Snoopy
+%%CreationDate: Sat Sep 14 10:40:50 2019
+%%Orientation: Portrait
+%%BoundingBox: 19 415 598 823
+%%EndComments
+
+
+%%BeginProlog
+/conicto {
+    /to_y exch def
+    /to_x exch def
+    /conic_cntrl_y exch def
+    /conic_cntrl_x exch def
+    currentpoint
+    /p0_y exch def
+    /p0_x exch def
+    /p1_x p0_x conic_cntrl_x p0_x sub 2 3 div mul add def
+    /p1_y p0_y conic_cntrl_y p0_y sub 2 3 div mul add def
+    /p2_x p1_x to_x p0_x sub 1 3 div mul add def
+    /p2_y p1_y to_y p0_y sub 1 3 div mul add def
+    p1_x p1_y p2_x p2_y to_x to_y curveto
+}  bind def
+/ellipsedict 8 dict def
+ellipsedict /mtrx matrix put
+/ellipse {
+    ellipsedict begin
+    /endangle exch def
+    /startangle exch def
+    /yrad exch def
+    /xrad exch def
+    /y exch def
+    /x exch def
+    /savematrix mtrx currentmatrix def
+    x y translate
+    xrad yrad scale
+    0 0 1 startangle endangle arc
+    savematrix setmatrix
+    end
+    } def
+/ellipticarcdict 8 dict def
+ellipticarcdict /mtrx matrix put
+/ellipticarc
+{ ellipticarcdict begin
+  /do_fill exch def
+  /endangle exch def
+  /startangle exch def
+  /yrad exch def
+  /xrad exch def 
+  /y exch def
+  /x exch def
+  /savematrix mtrx currentmatrix def
+  x y translate
+  xrad yrad scale
+  do_fill { 0 0 moveto } if
+  0 0 1 startangle endangle arc
+  savematrix setmatrix
+  do_fill { fill }{ stroke } ifelse
+  end
+} def
+% define 'colorimage' if it isn't defined
+%   ('colortogray' and 'mergeprocs' come from xwd2ps
+%     via xgrab)
+/colorimage where   % do we know about 'colorimage'?
+  { pop }           % yes: pop off the 'dict' returned
+  {                 % no:  define one
+    /colortogray {  % define an RGB->I function
+      /rgbdata exch store    % call input 'rgbdata'
+      rgbdata length 3 idiv
+      /npixls exch store
+      /rgbindx 0 store
+      0 1 npixls 1 sub {
+        grays exch
+        rgbdata rgbindx       get 20 mul    % Red
+        rgbdata rgbindx 1 add get 32 mul    % Green
+        rgbdata rgbindx 2 add get 12 mul    % Blue
+        add add 64 idiv      % I = .5G + .31R + .18B
+        put
+        /rgbindx rgbindx 3 add store
+      } for
+      grays 0 npixls getinterval
+    } bind def
+
+    % Utility procedure for colorimage operator.
+    % This procedure takes two procedures off the
+    % stack and merges them into a single procedure.
+
+    /mergeprocs { % def
+      dup length
+      3 -1 roll
+      dup
+      length
+      dup
+      5 1 roll
+      3 -1 roll
+      add
+      array cvx
+      dup
+      3 -1 roll
+      0 exch
+      putinterval
+      dup
+      4 2 roll
+      putinterval
+    } bind def
+
+    /colorimage { % def
+      pop pop     % remove 'false 3' operands
+      {colortogray} mergeprocs
+      image
+    } bind def
+  } ifelse          % end of 'false' case
+
+/reencodeISO {
+dup dup findfont dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+/Encoding ISOLatin1Encoding def
+currentdict end definefont
+} def
+/ISOLatin1Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve
+/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut
+/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
+
+/DrawSplineSection {
+    /y3 exch def
+    /x3 exch def
+    /y2 exch def
+    /x2 exch def
+    /y1 exch def
+    /x1 exch def
+    /xa x1 x2 x1 sub 0.666667 mul add def
+    /ya y1 y2 y1 sub 0.666667 mul add def
+    /xb x3 x2 x3 sub 0.666667 mul add def
+    /yb y3 y2 y3 sub 0.666667 mul add def
+    x1 y1 lineto
+    xa ya xb yb x3 y3 curveto
+    } def
+%%EndProlog
+1.000000 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+20.040000 820.960000 moveto
+20.040000 820.960000 lineto
+20.040000 820.960000 lineto
+20.040000 820.960000 lineto
+closepath
+fill
+1.000000 setlinewidth
+newpath
+20.040000 820.960000 moveto
+20.040000 820.960000 lineto
+20.040000 820.960000 lineto
+20.040000 820.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+24.960000 816.040000 moveto
+18.000000 816.040000 lineto
+18.000000 823.000000 lineto
+24.960000 823.000000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+198.960000 642.040000 9.000000 9.000000 0 360 ellipse
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+198.960000 642.040000 9.000000 9.000000 0 360 ellipse
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+195.000000 646.000000 moveto
+206.040000 646.000000 lineto
+206.040000 634.960000 lineto
+195.000000 634.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+213.960000 631.000000 moveto
+237.000000 631.000000 lineto
+237.000000 609.040000 lineto
+213.960000 609.040000 lineto
+closepath clip newpath
+213.960000 616.960000 moveto
+(s1) show
+gsave
+213.960000 615.040000 moveto
+0.000000 setlinewidth
+230.040000 615.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+167.040000 610.960000 moveto
+234.000000 610.960000 lineto
+234.000000 589.000000 lineto
+167.040000 589.000000 lineto
+closepath clip newpath
+167.040000 597.040000 moveto
+(miR-21) show
+gsave
+167.040000 595.000000 moveto
+0.000000 setlinewidth
+216.000000 595.000000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+198.960000 462.040000 9.000000 9.000000 0 360 ellipse
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+198.960000 462.040000 9.000000 9.000000 0 360 ellipse
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+195.000000 466.000000 moveto
+206.040000 466.000000 lineto
+206.040000 454.960000 lineto
+195.000000 454.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+213.960000 451.000000 moveto
+237.000000 451.000000 lineto
+237.000000 429.040000 lineto
+213.960000 429.040000 lineto
+closepath clip newpath
+213.960000 436.960000 moveto
+(s3) show
+gsave
+213.960000 435.040000 moveto
+0.000000 setlinewidth
+230.040000 435.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+177.960000 430.960000 moveto
+222.960000 430.960000 lineto
+222.960000 409.000000 lineto
+177.960000 409.000000 lineto
+closepath clip newpath
+177.960000 417.040000 moveto
+(IL-6) show
+gsave
+177.960000 415.000000 moveto
+0.000000 setlinewidth
+210.000000 415.000000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+459.000000 642.040000 9.000000 9.000000 0 360 ellipse
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+459.000000 642.040000 9.000000 9.000000 0 360 ellipse
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+455.040000 646.000000 moveto
+465.960000 646.000000 lineto
+465.960000 634.960000 lineto
+455.040000 634.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+474.000000 631.000000 moveto
+497.040000 631.000000 lineto
+497.040000 609.040000 lineto
+474.000000 609.040000 lineto
+closepath clip newpath
+474.000000 616.960000 moveto
+(s2) show
+gsave
+474.000000 615.040000 moveto
+0.000000 setlinewidth
+489.960000 615.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+432.960000 610.960000 moveto
+489.000000 610.960000 lineto
+489.000000 589.000000 lineto
+432.960000 589.000000 lineto
+closepath clip newpath
+432.960000 597.040000 moveto
+(NF-kB) show
+gsave
+432.960000 595.000000 moveto
+0.000000 setlinewidth
+474.000000 595.000000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+459.000000 462.040000 9.000000 9.000000 0 360 ellipse
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+459.000000 462.040000 9.000000 9.000000 0 360 ellipse
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+455.040000 466.000000 moveto
+465.960000 466.000000 lineto
+465.960000 454.960000 lineto
+455.040000 454.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+474.000000 451.000000 moveto
+497.040000 451.000000 lineto
+497.040000 429.040000 lineto
+474.000000 429.040000 lineto
+closepath clip newpath
+474.000000 436.960000 moveto
+(s4) show
+gsave
+474.000000 435.040000 moveto
+0.000000 setlinewidth
+489.960000 435.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+422.040000 430.960000 moveto
+500.040000 430.960000 lineto
+500.040000 409.000000 lineto
+422.040000 409.000000 lineto
+closepath clip newpath
+422.040000 417.040000 moveto
+(miR-146) show
+gsave
+422.040000 415.000000 moveto
+0.000000 setlinewidth
+479.040000 415.000000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+189.960000 550.960000 moveto
+209.040000 550.960000 lineto
+209.040000 532.000000 lineto
+189.960000 532.000000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+189.960000 550.960000 moveto
+209.040000 550.960000 lineto
+209.040000 532.000000 lineto
+189.960000 532.000000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+195.000000 546.040000 moveto
+206.040000 546.040000 lineto
+206.040000 535.000000 lineto
+195.000000 535.000000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+213.960000 531.040000 moveto
+237.000000 531.040000 lineto
+237.000000 508.960000 lineto
+213.960000 508.960000 lineto
+closepath clip newpath
+213.960000 517.000000 moveto
+(t3) show
+gsave
+213.960000 514.960000 moveto
+0.000000 setlinewidth
+230.040000 514.960000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+450.000000 730.960000 moveto
+468.960000 730.960000 lineto
+468.960000 712.000000 lineto
+450.000000 712.000000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+450.000000 730.960000 moveto
+468.960000 730.960000 lineto
+468.960000 712.000000 lineto
+450.000000 712.000000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+455.040000 726.040000 moveto
+465.960000 726.040000 lineto
+465.960000 715.000000 lineto
+455.040000 715.000000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+474.000000 711.040000 moveto
+497.040000 711.040000 lineto
+497.040000 688.960000 lineto
+474.000000 688.960000 lineto
+closepath clip newpath
+474.000000 697.000000 moveto
+(t0) show
+gsave
+474.000000 694.960000 moveto
+0.000000 setlinewidth
+489.960000 694.960000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+450.000000 550.960000 moveto
+468.960000 550.960000 lineto
+468.960000 532.000000 lineto
+450.000000 532.000000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+450.000000 550.960000 moveto
+468.960000 550.960000 lineto
+468.960000 532.000000 lineto
+450.000000 532.000000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+455.040000 546.040000 moveto
+465.960000 546.040000 lineto
+465.960000 535.000000 lineto
+455.040000 535.000000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+474.000000 531.040000 moveto
+497.040000 531.040000 lineto
+497.040000 508.960000 lineto
+474.000000 508.960000 lineto
+closepath clip newpath
+474.000000 517.000000 moveto
+(t4) show
+gsave
+474.000000 514.960000 moveto
+0.000000 setlinewidth
+489.960000 514.960000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+309.960000 651.040000 moveto
+329.040000 651.040000 lineto
+329.040000 631.960000 lineto
+309.960000 631.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+309.960000 651.040000 moveto
+329.040000 651.040000 lineto
+329.040000 631.960000 lineto
+309.960000 631.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+315.000000 646.000000 moveto
+326.040000 646.000000 lineto
+326.040000 634.960000 lineto
+315.000000 634.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+333.960000 631.000000 moveto
+357.000000 631.000000 lineto
+357.000000 609.040000 lineto
+333.960000 609.040000 lineto
+closepath clip newpath
+333.960000 616.960000 moveto
+(t1) show
+gsave
+333.960000 615.040000 moveto
+0.000000 setlinewidth
+350.040000 615.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+530.040000 651.040000 moveto
+549.000000 651.040000 lineto
+549.000000 631.960000 lineto
+530.040000 631.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+530.040000 651.040000 moveto
+549.000000 651.040000 lineto
+549.000000 631.960000 lineto
+530.040000 631.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+534.960000 646.000000 moveto
+546.000000 646.000000 lineto
+546.000000 634.960000 lineto
+534.960000 634.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+549.000000 631.000000 moveto
+582.960000 631.000000 lineto
+582.960000 609.040000 lineto
+549.000000 609.040000 lineto
+closepath clip newpath
+549.000000 616.960000 moveto
+(td4) show
+gsave
+549.000000 615.040000 moveto
+0.000000 setlinewidth
+573.000000 615.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+330.000000 531.040000 moveto
+348.960000 531.040000 lineto
+348.960000 511.960000 lineto
+330.000000 511.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+330.000000 531.040000 moveto
+348.960000 531.040000 lineto
+348.960000 511.960000 lineto
+330.000000 511.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+335.040000 526.000000 moveto
+345.960000 526.000000 lineto
+345.960000 514.960000 lineto
+335.040000 514.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+354.000000 511.000000 moveto
+377.040000 511.000000 lineto
+377.040000 489.040000 lineto
+354.000000 489.040000 lineto
+closepath clip newpath
+354.000000 496.960000 moveto
+(t6) show
+gsave
+354.000000 495.040000 moveto
+0.000000 setlinewidth
+369.960000 495.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+290.040000 571.000000 moveto
+309.000000 571.000000 lineto
+309.000000 552.040000 lineto
+290.040000 552.040000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+290.040000 571.000000 moveto
+309.000000 571.000000 lineto
+309.000000 552.040000 lineto
+290.040000 552.040000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+294.960000 565.960000 moveto
+306.000000 565.960000 lineto
+306.000000 555.040000 lineto
+294.960000 555.040000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+314.040000 550.960000 moveto
+336.960000 550.960000 lineto
+336.960000 529.000000 lineto
+314.040000 529.000000 lineto
+closepath clip newpath
+314.040000 537.040000 moveto
+(t2) show
+gsave
+314.040000 535.000000 moveto
+0.000000 setlinewidth
+330.000000 535.000000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+309.960000 471.040000 moveto
+329.040000 471.040000 lineto
+329.040000 451.960000 lineto
+309.960000 451.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+309.960000 471.040000 moveto
+329.040000 471.040000 lineto
+329.040000 451.960000 lineto
+309.960000 451.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+315.000000 466.000000 moveto
+326.040000 466.000000 lineto
+326.040000 454.960000 lineto
+315.000000 454.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+333.960000 451.000000 moveto
+357.000000 451.000000 lineto
+357.000000 429.040000 lineto
+333.960000 429.040000 lineto
+closepath clip newpath
+333.960000 436.960000 moveto
+(t5) show
+gsave
+333.960000 435.040000 moveto
+0.000000 setlinewidth
+350.040000 435.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+110.040000 471.040000 moveto
+129.000000 471.040000 lineto
+129.000000 451.960000 lineto
+110.040000 451.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+110.040000 471.040000 moveto
+129.000000 471.040000 lineto
+129.000000 451.960000 lineto
+110.040000 451.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+114.960000 466.000000 moveto
+126.000000 466.000000 lineto
+126.000000 454.960000 lineto
+114.960000 454.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+129.000000 451.000000 moveto
+162.960000 451.000000 lineto
+162.960000 429.040000 lineto
+129.000000 429.040000 lineto
+closepath clip newpath
+129.000000 436.960000 moveto
+(td3) show
+gsave
+129.000000 435.040000 moveto
+0.000000 setlinewidth
+153.000000 435.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+530.040000 471.040000 moveto
+549.000000 471.040000 lineto
+549.000000 451.960000 lineto
+530.040000 451.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+530.040000 471.040000 moveto
+549.000000 471.040000 lineto
+549.000000 451.960000 lineto
+530.040000 451.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+534.960000 466.000000 moveto
+546.000000 466.000000 lineto
+546.000000 454.960000 lineto
+534.960000 454.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+549.000000 451.000000 moveto
+582.960000 451.000000 lineto
+582.960000 429.040000 lineto
+549.000000 429.040000 lineto
+closepath clip newpath
+549.000000 436.960000 moveto
+(td2) show
+gsave
+549.000000 435.040000 moveto
+0.000000 setlinewidth
+573.000000 435.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 1.000000 1.000000 setrgbcolor
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+1.000000 1.000000 1.000000 setrgbcolor
+newpath
+90.000000 651.040000 moveto
+108.960000 651.040000 lineto
+108.960000 631.960000 lineto
+90.000000 631.960000 lineto
+closepath
+fill
+3.000000 setlinewidth
+0.501961 0.501961 0.501961 setrgbcolor
+newpath
+90.000000 651.040000 moveto
+108.960000 651.040000 lineto
+108.960000 631.960000 lineto
+90.000000 631.960000 lineto
+closepath
+stroke
+3.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+10.277778 scalefont setfont
+gsave
+newpath
+95.040000 646.000000 moveto
+105.960000 646.000000 lineto
+105.960000 634.960000 lineto
+95.040000 634.960000 lineto
+closepath clip newpath
+grestore
+0.000000 0.000000 0.000000 setrgbcolor
+1.000000 setlinewidth
+1.000000 setlinewidth
+/Helvetica reencodeISO def
+/Helvetica findfont
+16.444445 scalefont setfont
+gsave
+newpath
+108.960000 631.000000 moveto
+143.040000 631.000000 lineto
+143.040000 609.040000 lineto
+108.960000 609.040000 lineto
+closepath clip newpath
+108.960000 616.960000 moveto
+(td1) show
+gsave
+108.960000 615.040000 moveto
+0.000000 setlinewidth
+132.960000 615.040000 lineto
+stroke
+grestore
+grestore
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+459.960000 711.040000 moveto
+459.960000 651.040000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+459.960000 651.040000 moveto
+456.960000 661.000000 lineto
+462.960000 661.000000 lineto
+459.960000 651.040000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+459.960000 651.040000 moveto
+456.960000 661.000000 lineto
+462.960000 661.000000 lineto
+459.960000 651.040000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+450.000000 640.960000 moveto
+330.000000 640.960000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+330.000000 640.960000 moveto
+339.960000 643.960000 lineto
+339.960000 637.960000 lineto
+330.000000 640.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+330.000000 640.960000 moveto
+339.960000 643.960000 lineto
+339.960000 637.960000 lineto
+330.000000 640.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+470.040000 640.960000 moveto
+530.040000 640.960000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+530.040000 640.960000 moveto
+519.960000 637.960000 lineto
+519.960000 643.960000 lineto
+530.040000 640.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+530.040000 640.960000 moveto
+519.960000 637.960000 lineto
+519.960000 643.960000 lineto
+530.040000 640.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+350.040000 531.040000 moveto
+450.000000 631.000000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+450.000000 631.000000 moveto
+444.960000 622.000000 lineto
+441.000000 625.960000 lineto
+450.000000 631.000000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+450.000000 631.000000 moveto
+444.960000 622.000000 lineto
+441.000000 625.960000 lineto
+450.000000 631.000000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+210.000000 460.960000 moveto
+309.960000 460.960000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+309.960000 460.960000 moveto
+300.000000 457.960000 lineto
+300.000000 463.960000 lineto
+309.960000 460.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+309.960000 460.960000 moveto
+300.000000 457.960000 lineto
+300.000000 463.960000 lineto
+309.960000 460.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+189.960000 460.960000 moveto
+129.960000 460.960000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+129.960000 460.960000 moveto
+140.040000 463.960000 lineto
+140.040000 457.960000 lineto
+129.960000 460.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+129.960000 460.960000 moveto
+140.040000 463.960000 lineto
+140.040000 457.960000 lineto
+129.960000 460.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+459.960000 531.040000 moveto
+459.960000 471.040000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+459.960000 471.040000 moveto
+456.960000 481.000000 lineto
+462.960000 481.000000 lineto
+459.960000 471.040000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+459.960000 471.040000 moveto
+456.960000 481.000000 lineto
+462.960000 481.000000 lineto
+459.960000 471.040000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+470.040000 460.960000 moveto
+530.040000 460.960000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+530.040000 460.960000 moveto
+519.960000 457.960000 lineto
+519.960000 463.960000 lineto
+530.040000 460.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+530.040000 460.960000 moveto
+519.960000 457.960000 lineto
+519.960000 463.960000 lineto
+530.040000 460.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+189.960000 640.960000 moveto
+110.040000 640.960000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+110.040000 640.960000 moveto
+120.000000 643.960000 lineto
+120.000000 637.960000 lineto
+110.040000 640.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+110.040000 640.960000 moveto
+120.000000 643.960000 lineto
+120.000000 637.960000 lineto
+110.040000 640.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+200.040000 550.960000 moveto
+200.040000 631.000000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+200.040000 631.000000 moveto
+203.040000 621.040000 lineto
+197.040000 621.040000 lineto
+200.040000 631.000000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+200.040000 631.000000 moveto
+203.040000 621.040000 lineto
+197.040000 621.040000 lineto
+200.040000 631.000000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+1.000000 setlinewidth
+newpath
+290.040000 550.960000 moveto
+210.000000 471.040000 lineto
+stroke
+1.000000 setlinewidth
+newpath
+210.000000 471.040000 moveto
+215.040000 480.040000 lineto
+219.000000 475.960000 lineto
+210.000000 471.040000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+210.000000 471.040000 moveto
+215.040000 480.040000 lineto
+219.000000 475.960000 lineto
+210.000000 471.040000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+[4 4] 2 setdash
+1.000000 setlinewidth
+newpath
+210.000000 640.960000 moveto
+309.960000 640.960000 lineto
+stroke
+1.000000 setlinewidth
+[] 0 setdash
+newpath
+309.960000 640.960000 moveto
+300.000000 637.960000 lineto
+300.000000 643.960000 lineto
+309.960000 640.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+309.960000 640.960000 moveto
+300.000000 637.960000 lineto
+300.000000 643.960000 lineto
+309.960000 640.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+[4 4] 2 setdash
+1.000000 setlinewidth
+newpath
+450.000000 460.960000 moveto
+395.040000 460.960000 lineto
+395.040000 460.960000 339.960000 460.960000 335.040000 460.960000 DrawSplineSection
+330.000000 460.960000 lineto
+stroke
+1.000000 setlinewidth
+[] 0 setdash
+newpath
+330.000000 460.960000 moveto
+339.960000 463.960000 lineto
+339.960000 457.960000 lineto
+330.000000 460.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+330.000000 460.960000 moveto
+339.960000 463.960000 lineto
+339.960000 457.960000 lineto
+330.000000 460.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+[4 4] 2 setdash
+1.000000 setlinewidth
+newpath
+459.960000 631.000000 moveto
+459.960000 550.960000 lineto
+stroke
+1.000000 setlinewidth
+[] 0 setdash
+newpath
+459.960000 550.960000 moveto
+456.960000 561.040000 lineto
+462.960000 561.040000 lineto
+459.960000 550.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+459.960000 550.960000 moveto
+456.960000 561.040000 lineto
+462.960000 561.040000 lineto
+459.960000 550.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+[4 4] 2 setdash
+1.000000 setlinewidth
+newpath
+200.040000 471.040000 moveto
+200.040000 531.040000 lineto
+stroke
+1.000000 setlinewidth
+[] 0 setdash
+newpath
+200.040000 531.040000 moveto
+203.040000 520.960000 lineto
+197.040000 520.960000 lineto
+200.040000 531.040000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+200.040000 531.040000 moveto
+203.040000 520.960000 lineto
+197.040000 520.960000 lineto
+200.040000 531.040000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+[4 4] 2 setdash
+1.000000 setlinewidth
+newpath
+450.000000 636.040000 moveto
+309.960000 565.960000 lineto
+stroke
+1.000000 setlinewidth
+[] 0 setdash
+newpath
+309.960000 565.960000 moveto
+317.040000 573.040000 lineto
+320.040000 567.040000 lineto
+309.960000 565.960000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+309.960000 565.960000 moveto
+317.040000 573.040000 lineto
+320.040000 567.040000 lineto
+309.960000 565.960000 lineto
+closepath
+stroke
+1.000000 setlinewidth
+1.000000 setlinewidth
+[4 4] 2 setdash
+1.000000 setlinewidth
+newpath
+210.000000 465.040000 moveto
+330.000000 517.000000 lineto
+stroke
+1.000000 setlinewidth
+[] 0 setdash
+newpath
+330.000000 517.000000 moveto
+321.960000 510.040000 lineto
+318.960000 516.040000 lineto
+330.000000 517.000000 lineto
+eofill
+1.000000 setlinewidth
+newpath
+330.000000 517.000000 moveto
+321.960000 510.040000 lineto
+318.960000 516.040000 lineto
+330.000000 517.000000 lineto
+closepath
+stroke
+1.000000 setlinewidth

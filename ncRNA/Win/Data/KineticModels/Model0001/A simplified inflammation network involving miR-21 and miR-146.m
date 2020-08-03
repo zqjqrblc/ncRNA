@@ -1,0 +1,1 @@
+A simplified inflammation network involving miR-21 and miR-146

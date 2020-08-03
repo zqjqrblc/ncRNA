@@ -1,0 +1,128 @@
+{
+   "Link" : [
+      {
+         "name" : "Array Experiments_ArrayExpress",
+         "path" : "https://www.ebi.ac.uk/arrayexpress/browse.html?keywords=searchValue"
+      },
+      {
+         "name" : "Array Experiments_GEO DataSets",
+         "path" : "https://www.ncbi.nlm.nih.gov/gds/?term=searchValue"
+      },
+      {
+         "name" : "Global Database Search_EBI",
+         "path" : "https://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&requestFrom=ebi_index&query=searchValue"
+      },
+      {
+         "name" : "Global Database Search_NCBI",
+         "path" : "https://www.ncbi.nlm.nih.gov/search/all/?term=searchValue"
+      },
+      {
+         "name" : "Model Organism DB_FlyBase(fly)",
+         "path" : "http://flybase.org/cgi-bin/quicksearch_solr.cgi?context=searchValue &tab=basic_tab&view=sum"
+      },
+      {
+         "name" : "Model Organism DB_HGNC(human)",
+         "path" : "https://www.genenames.org/data/hgnc_data.php?hgnc_id=searchValue"
+      },
+      {
+         "name" : "Model Organism DB_MGI(mouse)",
+         "path" : "http://www.informatics.jax.org/javawi2/servlet/WIFetch?page=searchTool&query=searchValue &selectedQuery=Genes+and+Markers"
+      },
+      {
+         "name" : "Model Organism DB_SGD(yeast)",
+         "path" : "https://www.yeastgenome.org/search?q=searchValue &is_quick=true"
+      },
+      {
+         "name" : "Model Organism DB_WormBase(worm)",
+         "path" : "https://wormbase.org/search/gene/searchValue?from=http://wormbase.org/db/gene/gene?name=VPR"
+      },
+      {
+         "name" : "Ontology_Gene Ontology (QuickGO by ID)",
+         "path" : "https://www.ebi.ac.uk/QuickGO/search/GO:searchValue"
+      },
+      {
+         "name" : "Ontology_Gene Ontology (QuickGO by name)",
+         "path" : "https://www.ebi.ac.uk/QuickGO/search/searchValue"
+      },
+      {
+         "name" : "Pathway Databases_KEGG Pathways",
+         "path" : "https://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=searchValue &mode=1&viewImage=true"
+      },
+      {
+         "name" : "Pathway Databases_Pathway Commons",
+         "path" : "http://apps.pathwaycommons.org/search?type=Pathway&q=searchValue"
+      },
+      {
+         "name" : "Pathway Databases_Reactome",
+         "path" : "https://reactome.org/cgi-bin/search2?OPERATOR=ALL&SPECIES=ALL&QUERY=searchValue"
+      },
+      {
+         "name" : "Pathway Databases_Wikipathways",
+         "path" : "https://www.wikipathways.org//index.php?query=searchValue &title=Special%3ASearchPathways&doSearch=1&sa=Search"
+      },
+      {
+         "name" : "Publications_OMIM",
+         "path" : "https://www.ncbi.nlm.nih.gov/omim?cmd=Search&term=searchValue &doptcmdl=Synopsis"
+      },
+      {
+         "name" : "Publications_Pubmed",
+         "path" : "https://www.ncbi.nlm.nih.gov/pubmed?cmd=Search&term=searchValue &doptcmdl=Abstract"
+      },
+      {
+         "name" : "Sequences and Proteins_Ensembl Gene View_fly",
+         "path" : "http://asia.ensembl.org/Drosophila_melanogaster/Gene/Summary?gene=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Ensembl Gene View_human",
+         "path" : "http://asia.ensembl.org/Homo_sapiens/Gene/Summary?gene=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Ensembl Gene View_mouse",
+         "path" : "http://asia.ensembl.org/Mus_musculus/Gene/Summary?gene=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Ensembl Gene View_worm",
+         "path" : "http://asia.ensembl.org/Caenorhabditis_elegans/Gene/Summary?gene=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Ensembl Gene View_yeast",
+         "path" : "http://asia.ensembl.org/Saccharomyces_cerevisiae/Gene/Summary?gene=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Entrez Gene",
+         "path" : "https://www.ncbi.nlm.nih.gov/gene?term=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Entrez Genome",
+         "path" : "https://www.ncbi.nlm.nih.gov/genome?term=searchValue"
+      },
+      {
+         "name" : "Sequences and Proteins_Entrez Protein",
+         "path" : "https://www.ncbi.nlm.nih.gov/protein?cmd=Search&term=searchValue &doptcmdl=GenPept"
+      },
+      {
+         "name" : "Sequences and Proteins_UniProt",
+         "path" : "https://www.uniprot.org/uniprot/?query=searchValue &sort=score"
+      },
+      {
+         "name" : "Structure Databases_NCBI Structure",
+         "path" : "https://www.ncbi.nlm.nih.gov/structure/?term=searchValue"
+      },
+      {
+         "name" : "Structure Databases_PDBe",
+         "path" : "https://www.ebi.ac.uk/pdbe/searchResults.html?display=both&term=searchValue"
+      },
+      {
+         "name" : "Web Search_Google",
+         "path" : "http://www.google.com/search?hl=en&q=searchValue &btnG=Google+Search"
+      },
+      {
+         "name" : "Web Search_Wikipedia",
+         "path" : "https://en.wikipedia.org/w/index.php?search=searchValue"
+      },
+      {
+         "name" : "ncRNA Central",
+         "path" : "https://rnacentral.org/search?q=searchValue"
+      }
+   ]
+}
